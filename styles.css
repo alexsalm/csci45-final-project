@@ -41,3 +41,13 @@ p {
     max-width: 30rem;
     box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);
 }
+
+h2 {
+    height: 3rem;
+    text-align: center;
+}
+
+.input {
+    position: relative;
+    display: flex;
+}
