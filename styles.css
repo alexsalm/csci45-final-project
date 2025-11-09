@@ -64,7 +64,7 @@ input[type="text"]::placeholder {
     color: grey;
 }
 
-.todo-container {
+.plan-container {
     display: flex;
     gap: 1rem;
 }
