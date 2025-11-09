@@ -88,3 +88,12 @@ li {
     gap: 1.2rem;
     align-items: center;
 }
+
+#planList .disabled {
+    color: #8f98a8;
+}
+
+.disabled {
+    display: flex;
+    text-decoration: line-through;
+}
