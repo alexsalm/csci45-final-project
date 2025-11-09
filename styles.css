@@ -145,3 +145,20 @@ input[type="checkbox"]:checked::before {
     color: grey;
     font-size: 1rem;
 }
+
+.footer {
+    display: flex;
+    gap: 1.8rem;
+    background-color: white;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+}
+
+.made-by, .author {
+    font-size: 0.9rem;
+}
+
+.author {
+    font-weight: bold;
+}
+
