@@ -97,3 +97,29 @@ li {
     display: flex;
     text-decoration: line-through;
 }
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+    content: "\2713";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.7rem;
+    text-align: center;
+    border: 0.06rem solid grey;
+    border-radius: 50%;
+    color: transparent;
+}
+
+input[type="checkbox"]:checked::before {
+    color: white;
+    background-color: green;
+    border: 0.06rem solid green;
+    border-radius: 50%;
+}
