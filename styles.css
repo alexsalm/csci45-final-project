@@ -123,3 +123,25 @@ input[type="checkbox"]:checked::before {
     border: 0.06rem solid green;
     border-radius: 50%;
 }
+
+.counter {
+    border: 0.06rem solid lightgrey;
+}
+
+.counter-container {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: grey;
+}
+
+.counter-container p {
+    align-self: center;
+}
+
+.counter-container button {
+    border: none;
+    background-color: transparent;
+    color: grey;
+    font-size: 1rem;
+}
