@@ -8,20 +8,21 @@ const deleteButton = document.getElementById("deleteButton");
 
 // Initialize
 document.addEventListener("DOMContentLoaded", function () {
-    addButton.addEventListener("click", addTask);
+    addButton.addEventListener("click", addPlan);
     planInput.addEventListener('keydown', function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
-            addTask();
+            addPlan();
         }
     });
-    deleteButton.addEventListener("click", deleteAllTasks);
+    deleteButton.addEventListener("click", deleteAllPlans);
+    displayPlans();
 });
 
-function addTask() {
+function addPlan() {
     // some logic
 }
 
-function deleteAllTasks() {
+function deleteAllPlans() {
     // some logic
 }
