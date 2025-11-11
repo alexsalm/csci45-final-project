@@ -37,7 +37,25 @@ function deleteAllPlans() {
 }
 
 function displayPlans() {
-    // some logic
+    planList.innerHTML = "";
+    plan.forEach((item, index) => {
+        const p = document.createElement("p");
+        p.innerHTML = `
+            <div class="plan-container">
+                <input type="checkbox" class="plan-checkbox" id="input-${index}" 
+                ${item.disabled ? "checked" : ""
+                }>
+                <p id="plan-${index}" class="${item.disabled ? "disabled" : ""}"
+                onclick ="editPlan(${index})">${item.text}
+                </p>
+            </div>
+        `;
+        p.querySelector(".plan-checkbox").addEventListener("change", () =>
+            togglePlan(index)
+        );
+        planList.appendChild(p);
+    });
+    planCount.textContent = plan.length;
 }
 
 function saveToLocalStorage() {

@@ -29,7 +29,7 @@ p {
 
 /* Plan container */
 
-.plans {
+.plan {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -84,8 +84,7 @@ li {
 
 #planList p {
     display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
     align-items: center;
 }
 
