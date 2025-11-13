@@ -33,7 +33,9 @@ function addPlan() {
 }
 
 function deleteAllPlans() {
-    // some logic
+    plan = [];
+    saveToLocalStorage();
+    displayPlans();
 }
 
 function displayPlans() {
