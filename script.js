@@ -77,6 +77,13 @@ function editPlan(index) {
         }
         displayPlans();
     });
+
+    inputElement.addEventListener('keyup', function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            inputElement.blur();
+        }
+    });
 }
 
 function togglePlan(index) {
