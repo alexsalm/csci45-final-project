@@ -58,6 +58,12 @@ function displayPlans() {
     planCount.textContent = plan.length;
 }
 
+function togglePlan(index) {
+    plan[index].disabled = !plan[index].disabled;
+    saveToLocalStorage();
+    displayPlans();
+}
+
 function saveToLocalStorage() {
     localStorage.setItem("plan", JSON.stringify(plan));
 }
