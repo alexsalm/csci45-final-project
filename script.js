@@ -60,6 +60,25 @@ function displayPlans() {
     planCount.textContent = plan.length;
 }
 
+function editPlan(index) {
+    const planItem = document.getElementById(`plan-${index}`);
+    const existingText = plan[index].text;
+    const inputElement = document.createElement("input");
+
+    inputElement.value = existingText;
+    planItem.replaceWith(inputElement);
+    inputElement.focus();
+
+    inputElement.addEventListener("blur", function () {
+        const updatedText = inputElement.value.trim();
+        if (updatedText) {
+            plan[index].text = updatedText;
+            saveToLocalStorage();
+        }
+        displayPlans();
+    });
+}
+
 function togglePlan(index) {
     plan[index].disabled = !plan[index].disabled;
     saveToLocalStorage();
