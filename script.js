@@ -1,4 +1,9 @@
 // Retrieve plan from local storage or initialize an empty array
+let trueNorth = JSON.parse(localStorage.getItem("trueNorth")) || [];
+const trueNorthInput = document.getElementById("true-north-input");
+const headerButton = document.querySelector(".header-btn");
+
+
 let plan = JSON.parse(localStorage.getItem("plan")) || [];
 const planInput = document.getElementById("planInput");
 const planList = document.getElementById("planList");
@@ -8,6 +13,15 @@ const deleteButton = document.getElementById("deleteButton");
 
 // Initialize
 document.addEventListener("DOMContentLoaded", function () {
+    headerButton.addEventListener("click", addTrueNorth);
+    trueNorthInput.addEventListener('keydown', function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            addTrueNorth();
+        }
+    });
+    displayTrueNorth();
+    
     addButton.addEventListener("click", addPlan);
     planInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
@@ -18,6 +32,46 @@ document.addEventListener("DOMContentLoaded", function () {
     deleteButton.addEventListener("click", deleteAllPlans);
     displayPlans();
 });
+
+function addTrueNorth() {
+    const newTrueNorth = trueNorthInput.value.trim();
+    if (newTrueNorth !== "") {
+        trueNorth.push({
+            text: newTrueNorth,
+            disabled: false,
+        });
+        saveToLocalStorage();
+        trueNorthInput.value = "";
+        displayTrueNorth();
+    }
+}
+
+function displayTrueNorth() {
+    const userTrueNorth = document.getElementById("true-north-declaration");
+    if (trueNorth.length > 0) {
+        userTrueNorth.innerHTML = trueNorth[0].text;
+        editTrueNorth();
+    }
+    else {
+        userTrueNorth.innerHTML = "";
+    }
+    function editTrueNorth() {
+        const existingTrueNorth = trueNorth[0].text;
+        const trueNorthToEdit = document.createElement("input");
+
+        trueNorthToEdit.value = existingTrueNorth;
+        userTrueNorth.replaceWith(trueNorthToEdit);
+        trueNorthToEdit.focus();
+
+        trueNorthToEdit.addEventListener("blur", function () {
+            const updatedTrueNorth = trueNorthToEdit.value.trim();
+            if (updatedTrueNorth) {
+                trueNorth[0].text = updatedTrueNorth;
+                saveToLocalStorage();
+            }
+        });
+    }
+}
 
 function addPlan() {
     const newPlan = planInput.value.trim();
@@ -94,4 +148,5 @@ function togglePlan(index) {
 
 function saveToLocalStorage() {
     localStorage.setItem("plan", JSON.stringify(plan));
+    localStorage.setItem("trueNorth", JSON.stringify(trueNorth));
 }
