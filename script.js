@@ -38,7 +38,19 @@ document.addEventListener("DOMContentLoaded", function () {
     planInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
-            addPlan();
+        
+            let checkAlignment = prompt("Does this move you closer to your true north?");
+
+            if (checkAlignment === "Yes" || checkAlignment === "yes") {
+                addPlan();
+                document.getElementById("not-aligned-message").innerHTML = 
+                "<h4></h4>";
+            }
+
+            if (checkAlignment === "No" || checkAlignment === "no") {
+                document.getElementById("not-aligned-message").innerHTML = 
+                "<h4>this is not in alignment with your True North</h4>";
+            }
         }
     });
     deleteButton.addEventListener("click", deleteAllPlans);
