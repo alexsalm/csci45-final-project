@@ -91,6 +91,13 @@ h3 {
     font-size: 1rem;
 }
 
+.not-aligned-section h4 {
+    color: red;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
 input[type="text"]::placeholder {
     color: grey;
 }

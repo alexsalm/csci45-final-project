@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (checkAlignment === "Yes" || checkAlignment === "yes") {
             addTask();
-            document.getElementById("not-aligned message").innerHTML = "<h4></h4";
+            document.getElementById("not-aligned-message").innerHTML = "<h4></h4";
         }
 
         if (checkAlignment === "No" || checkAlignment === "no") {
