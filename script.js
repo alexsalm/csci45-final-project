@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let checkAlignment = prompt("Does this move you closer to your true north?");
 
         if (checkAlignment === "Yes" || checkAlignment === "yes") {
-            addTask();
+            addPlan();
             document.getElementById("not-aligned-message").innerHTML = "<h4></h4";
         }
 
