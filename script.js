@@ -22,7 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     displayTrueNorth();
     
-    addButton.addEventListener("click", addPlan);
+    addButton.addEventListener("click", function () {
+        let checkAlignment = prompt("Does this move you closer to your true north?");
+
+        if (checkAlignment === "Yes" || checkAlignment === "yes") {
+            addTask();
+            document.getElementById("not-aligned message").innerHTML = "<h4></h4";
+        }
+
+        if (checkAlignment === "No" || checkAlignment === "no") {
+            document.getElementById("not-aligned-message").innerHTML = 
+            "<h4>this is not in alignment with your true north</h4>";
+        }
+    });
     planInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
