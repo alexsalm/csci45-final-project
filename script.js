@@ -38,6 +38,50 @@ document.addEventListener("DOMContentLoaded", function () {
             "<h4>this is not in alignment with your true north</h4>";
         }
     });
+
+    attentionList.addEventListener("change", (event) => {
+        let currentOption = event.target.value;
+        attentionOption.push({
+            text: currentOption,
+            disabled: false,
+        });
+        saveToLocalStorage();
+        console.log(currentOption);
+
+        const submitButton = document.querySelector(".submit");
+        const option0 = document.getElementById("no-option-selected").selected;
+        const option1 = document.getElementById("true-north-option").selected;
+        const option2 = document.getElementById("other-obligations").selected;
+        const option3 = document.getElementById("distraction-option").selected;
+        const option4 = document.getElementById("not-sure-option").selected;
+
+        if (submitButton) {
+            submitButton.addEventListener("click", function() {
+                if (option0 === true) {
+                    document.getElementById("attention-message").innerHTML = 
+                    "<h4>No option selected</h4>"; 
+                }
+                if (option1 === true) {
+                    document.getElementById("attention-message").innerHTML = 
+                    "<h4>You're locked in</h4>";
+                }
+                if (option2 === true) {
+                    document.getElementById("attention-message").innerHTML =
+                    "<h4>Are these obligations serving you?</h4>";
+                }
+                if (option3 === true) {
+                    document.getElementById("attention-message").innerHTML =
+                    "<h4>You need to remove these distractions</h4>";
+                }
+                if (option4 === true) {
+                    document.getElementById("attention-message").innerHTML =
+                    "<h4>Okay, we need to reassess what we are doing</h4>";
+                }
+                console.log("Submit button pressed");
+            });
+        }
+    });
+
     planInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
@@ -139,6 +183,32 @@ function displayPlans() {
         planList.appendChild(p);
     });
     planCount.textContent = plan.length;
+}
+
+const pressAttention = document.getElementById("attention");
+const cancelButton = document.getElementById("cancel");
+const attentionDialog = document.getElementById("attentionDialog");
+
+if (pressAttention) {
+    function openCheck(attentionDialog) {
+        if (attentionDialog.open) {
+            console.log("Attention dialog open");
+        } else {
+            console.log("Attention dialog closed");
+        }
+    }
+
+    pressAttention.addEventListener("click", (event) => {
+        event.preventDefault();
+        attentionDialog.showModal();
+        openCheck(attentionDialog);
+    });
+
+    cancelButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        attentionDialog.closest("noAttentionCheck");
+        openCheck(attentionDialog);
+    });
 }
 
 function editPlan(index) {
