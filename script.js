@@ -11,6 +11,9 @@ const planCount = document.getElementById("planCount");
 const addButton = document.querySelector(".btn");
 const deleteButton = document.getElementById("deleteButton");
 
+let attentionOption = JSON.parse(localStorage.getItem("attentionOption")) || [];
+const attentionList = document.getElementById("attentionList");
+
 // Initialize
 document.addEventListener("DOMContentLoaded", function () {
     headerButton.addEventListener("click", addTrueNorth);
@@ -173,4 +176,5 @@ function togglePlan(index) {
 function saveToLocalStorage() {
     localStorage.setItem("plan", JSON.stringify(plan));
     localStorage.setItem("trueNorth", JSON.stringify(trueNorth));
+    localStorage.setItem("attentionOption", JSON.stringify(attentionOption));
 }
