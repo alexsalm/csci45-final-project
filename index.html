@@ -26,6 +26,27 @@
         <div class="not-aligned-section">
             <h4 id="not-aligned-message"></h4>
         </div>
+        <dialog id="attentionDialog">
+            <form method="dialog">
+                <p>
+                    <label for="attentionList">Where is the majority of your attention flowing at the moment?</label>
+                    <select id="attentionList" name="attentionList">
+                        <option id="no-option-selected"></option>
+                        <option id="true-north-option">My true north</option>
+                        <option id="other-obligations">Other obligations</option>
+                        <option id="distraction-option">Distractions</option>
+                        <option id="not-sure-option">I'm not sure</option>
+                    </select>
+                </p>
+                <div>
+                    <button id="cancel" type="reset">Cancel</button>
+                    <button class="submit" type="submit">Confirm</button>
+                </div>
+            </form>
+        </dialog>
+        <div>
+            <button id="attention">Attention</button>
+        </div>
         <ul class="scroll">
             <li id="planList"></li>
         </ul>
