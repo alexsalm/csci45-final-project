@@ -39,6 +39,11 @@ body {
     bottom: 0.5rem;
 }
 
+#users-answer {
+    border-radius: 0.3rem;
+    border-style: dashed;
+}
+
 .btn {
     font-size: 1.1rem;
     padding: 0.7rem 1.5rem;
