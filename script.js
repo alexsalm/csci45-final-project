@@ -128,6 +128,10 @@ function displayTrueNorth() {
     }
     function editTrueNorth() {
         const existingTrueNorth = trueNorth[0].text;
+        if (existingTrueNorth) {
+            document.getElementById("true-north-input").disabled = true;
+        }
+        
         const trueNorthToEdit = document.createElement("input");
 
         trueNorthToEdit.value = existingTrueNorth;
