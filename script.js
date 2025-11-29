@@ -206,7 +206,7 @@ if (pressAttention) {
 
     cancelButton.addEventListener("click", (event) => {
         event.preventDefault();
-        attentionDialog.closest("noAttentionCheck");
+        attentionDialog.close("noAttentionCheck");
         openCheck(attentionDialog);
     });
 }
