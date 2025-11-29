@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
                 if (option1 === true) {
                     document.getElementById("attention-message").innerHTML = 
-                    "<h4>You're locked in</h4>";
+                    "<h4>Keep the momentum going</h4>";
                 }
                 if (option2 === true) {
                     document.getElementById("attention-message").innerHTML =

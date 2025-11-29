@@ -13,19 +13,29 @@
 <body>
     <header class="trueNorth">
         <h2>What is your true north?</h2>
-        <div class="input">
-            <input type="text" class="input-field" id="true-north-input"
-            placeholder="E.g. Go to mars by 2030">
-            <button class="header-btn">Add</button>
+        <div class="true-north-and-button-container">
+            <div class="input">
+                <input type="text" class="input-field" id="true-north-input"
+                placeholder="E.g. Go to mars by 2030">
+            </div>
+            <div class="input-button">
+                <button class="header-btn">Add</button>
+            </div>
         </div>
+        
         <h3 id="true-north-declaration"></h3>
     </header>
     <section class="plan">
         <h2>Plan List</h2>
-        <div class="input">
-            <input type="text" class="input-field" id="planInput" placeholder="Add a new plan"/>
-            <button class="btn">Add</button>
+        <div class="plan-and-button-container">
+             <div class="input">
+                <input type="text" class="input-field" id="planInput" placeholder="Add a new plan"/>
+            </div>
+            <div class="plan-button">
+                <button class="btn">Add</button>
+            </div>
         </div>
+
         <div class="not-aligned-section">
             <h4 id="not-aligned-message"></h4>
         </div>
@@ -47,7 +57,7 @@
                 </div>
             </form>
         </dialog>
-        <div>
+        <div class="attention-wrapper">
             <button id="attention">Attention</button>
         </div>
         <div class="attention-section">
