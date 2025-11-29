@@ -133,6 +133,7 @@ function displayTrueNorth() {
         }
         
         const trueNorthToEdit = document.createElement("input");
+        trueNorthToEdit.setAttribute("id", "users-answer");
 
         trueNorthToEdit.value = existingTrueNorth;
         userTrueNorth.replaceWith(trueNorthToEdit);
