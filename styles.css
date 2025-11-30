@@ -31,6 +31,45 @@ body {
     align-items: center;
 }
 
+.header-wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.section-wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 6rem;
+}
+
+.true-north-title {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#true-north-title {
+    font-weight: 300;
+    font-size: 40px;
+}
+
+#section-subheading {
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.section-explainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .true-north-and-button-container {
     display: flex;
     flex-direction: row;
@@ -93,7 +132,7 @@ p {
     padding: 3rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    height: 20%;
+    height: 80%;
     width: 60%;
     box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);
     max-width: 30rem;
@@ -108,7 +147,7 @@ p {
     background-color: white;
     padding: 3rem;
     margin-bottom: 2rem;
-    height: 40%;
+    height: 80%;
     width: 60%;
     max-width: 30rem;
     box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);
