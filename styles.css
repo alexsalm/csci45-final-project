@@ -100,7 +100,6 @@ p {
 }
 
 /* Plan container */
-
 .plan {
     display: flex;
     flex-direction: column;
