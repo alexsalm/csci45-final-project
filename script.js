@@ -14,8 +14,6 @@ const deleteButton = document.getElementById("deleteButton");
 let feedbackOption = JSON.parse(localStorage.getItem("feedbackOption")) || [];
 const feedbackList = document.getElementById("feedbackList");
 
-// let trueNorthExample = JSON.parse(localStorage.getItem("trueNorthExample")) || [];
-
 // Initialize
 document.addEventListener("DOMContentLoaded", function () {
     headerButton.addEventListener("click", addTrueNorth);
@@ -280,5 +278,4 @@ function saveToLocalStorage() {
     localStorage.setItem("plan", JSON.stringify(plan));
     localStorage.setItem("trueNorth", JSON.stringify(trueNorth));
     localStorage.setItem("feedbackOption", JSON.stringify(feedbackOption));
-    // localStorage.setItem("trueNorthExample", JSON.stringify(trueNorthExample));
 }
