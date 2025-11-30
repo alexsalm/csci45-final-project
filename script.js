@@ -14,6 +14,8 @@ const deleteButton = document.getElementById("deleteButton");
 let attentionOption = JSON.parse(localStorage.getItem("attentionOption")) || [];
 const attentionList = document.getElementById("attentionList");
 
+let trueNorthExample = JSON.parse(localStorage.getItem("trueNorthExample")) || [];
+
 // Initialize
 document.addEventListener("DOMContentLoaded", function () {
     headerButton.addEventListener("click", addTrueNorth);
@@ -190,6 +192,31 @@ function displayPlans() {
     planCount.textContent = plan.length;
 }
 
+const myArray = [
+    "I will focus on only one learning resource (The Odin Project, freeCodeCamp, Codecademy), and complete it",
+    "I will dedicate 1-2 hours per day to learn by doing, not just following some tutorial",
+    "I will pick one programming language (JavaScript, Python, C++) and stick with it",
+    "I will avoid YouTube doom scrolling at all costs",
+    "Maintain a clean workspace that will allow me to focus",
+    "Write down the following day's programming goals the night before",
+    "I will cut out noise surrounding AI replacing jobs",
+    "I will keep a long term horizon",
+    "Reming oneself to stay patient, but persistent in this career transistion",
+    "Get adequate sleep",
+    "Never quit",
+    "I will show up everyday, and at a minimum program for 30 minutes ",
+    "I will be my own biggest fan throughout this journey"
+];
+
+const generateExample = document.querySelector(".generateExample");
+
+generateExample.addEventListener("click", function () {
+    const random1 = myArray[(Math.floor(Math.random() * (myArray.length)))];
+    const exampleText = document.getElementById("exampleText");
+    exampleText.innerHTML = random1;
+    console.log(random1);
+});
+
 const pressAttention = document.getElementById("attention");
 const cancelButton = document.getElementById("cancel");
 const attentionDialog = document.getElementById("attentionDialog");
@@ -252,4 +279,5 @@ function saveToLocalStorage() {
     localStorage.setItem("plan", JSON.stringify(plan));
     localStorage.setItem("trueNorth", JSON.stringify(trueNorth));
     localStorage.setItem("attentionOption", JSON.stringify(attentionOption));
+    localStorage.setItem("trueNorthExample", JSON.stringify(trueNorthExample));
 }
