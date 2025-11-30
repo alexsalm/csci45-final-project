@@ -11,6 +11,7 @@ input,
 #attention,
 #cancel,
 .submit,
+.generateExample,
 #deleteButton,
 #attentionList {
     font-family: "Roboto", sans-serif;
@@ -42,13 +43,21 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin-top: 1rem;
 }
+
 .header-btn {
     font-size: 1.1rem;
     padding: 0.7rem 1.5rem;
     border-radius: 0.3rem;
     right: 0.5rem;
     bottom: 0.5rem;
+}
+
+.header-btn,
+.btn {
+    background-color: rgb(159, 185, 168);
+    color: white;
 }
 
 #users-answer {
@@ -114,6 +123,11 @@ h2 {
 h3 {
     height: 3rem;
     text-align: center;
+}
+
+#claritySubheading {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
 }
 
 .input {
@@ -194,8 +208,8 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
     color: white;
-    background-color: green;
-    border: 0.06rem solid green;
+    background-color: rgb(159, 185, 168);
+    border: 0.06rem solid rgb(159, 185, 168);
     border-radius: 50%;
 }
 

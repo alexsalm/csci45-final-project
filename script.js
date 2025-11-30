@@ -11,8 +11,8 @@ const planCount = document.getElementById("planCount");
 const addButton = document.querySelector(".btn");
 const deleteButton = document.getElementById("deleteButton");
 
-let attentionOption = JSON.parse(localStorage.getItem("attentionOption")) || [];
-const attentionList = document.getElementById("attentionList");
+let feedbackOption = JSON.parse(localStorage.getItem("feedbackOption")) || [];
+const feedbackList = document.getElementById("feedbackList");
 
 // let trueNorthExample = JSON.parse(localStorage.getItem("trueNorthExample")) || [];
 
@@ -41,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    attentionList.addEventListener("change", (event) => {
+    feedbackList.addEventListener("change", (event) => {
         let currentOption = event.target.value;
-        attentionOption.push({
+        feedbackOption.push({
             text: currentOption,
             disabled: false,
         });
@@ -52,32 +52,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const submitButton = document.querySelector(".submit");
         const option0 = document.getElementById("no-option-selected").selected;
-        const option1 = document.getElementById("true-north-option").selected;
-        const option2 = document.getElementById("other-obligations").selected;
-        const option3 = document.getElementById("distraction-option").selected;
+        const option1 = document.getElementById("needs-work").selected;
+        const option2 = document.getElementById("very-helpful").selected;
+        const option3 = document.getElementById("did-not-help").selected;
         const option4 = document.getElementById("not-sure-option").selected;
 
         if (submitButton) {
             submitButton.addEventListener("click", function() {
                 if (option0 === true) {
-                    document.getElementById("attention-message").innerHTML = 
+                    document.getElementById("feedback-message").innerHTML = 
                     "<h4>No option selected</h4>"; 
                 }
                 if (option1 === true) {
-                    document.getElementById("attention-message").innerHTML = 
-                    "<h4>Keep the momentum going</h4>";
+                    document.getElementById("feedback-message").innerHTML = 
+                    "<h4>Thanks for the feedback!</h4>";
                 }
                 if (option2 === true) {
-                    document.getElementById("attention-message").innerHTML =
-                    "<h4>Are these obligations serving you?</h4>";
+                    document.getElementById("feedback-message").innerHTML =
+                    "<h4>Thanks for the feedback!</h4>";
                 }
                 if (option3 === true) {
-                    document.getElementById("attention-message").innerHTML =
-                    "<h4>You need to remove these distractions</h4>";
+                    document.getElementById("feedback-message").innerHTML =
+                    "<h4>Thanks for the feedback!</h4>";
                 }
                 if (option4 === true) {
-                    document.getElementById("attention-message").innerHTML =
-                    "<h4>Okay, we need to reassess what we are doing</h4>";
+                    document.getElementById("feedback-message").innerHTML =
+                    "<h4>Thanks for the feedback!</h4>";
                 }
                 console.log("Submit button pressed");
             });
@@ -218,28 +218,28 @@ generateExample.addEventListener("click", function () {
     console.log(random1);
 });
 
-const pressAttention = document.getElementById("attention");
+const getFeedback = document.getElementById("feedback");
 const cancelButton = document.getElementById("cancel");
-const attentionDialog = document.getElementById("attentionDialog");
+const feedbackDialog = document.getElementById("feedbackDialog");
 
-if (pressAttention) {
-    function openCheck(attentionDialog) {
-        if (attentionDialog.open) {
-            console.log("Attention dialog open");
+if (getFeedback) {
+    function openCheck(feedbackDialog) {
+        if (feedbackDialog.open) {
+            console.log("Feedback dialog open");
         } else {
-            console.log("Attention dialog closed");
+            console.log("Feedback dialog closed");
         }
     }
 
-    pressAttention.addEventListener("click", (event) => {
+    getFeedback.addEventListener("click", (event) => {
         event.preventDefault();
-        attentionDialog.showModal();
-        openCheck(attentionDialog);
+        feedbackDialog.showModal();
+        openCheck(feedbackDialog);
     });
 
     cancelButton.addEventListener("click", (event) => {
         event.preventDefault();
-        attentionDialog.close("noAttentionCheck");
+        feedbackDialog.close("noFeedbackCheck");
         openCheck(attentionDialog);
     });
 }
@@ -279,6 +279,6 @@ function togglePlan(index) {
 function saveToLocalStorage() {
     localStorage.setItem("plan", JSON.stringify(plan));
     localStorage.setItem("trueNorth", JSON.stringify(trueNorth));
-    localStorage.setItem("attentionOption", JSON.stringify(attentionOption));
+    localStorage.setItem("feedbackOption", JSON.stringify(feedbackOption));
     // localStorage.setItem("trueNorthExample", JSON.stringify(trueNorthExample));
 }

@@ -27,6 +27,12 @@
     </header>
     <section class="plan">
         <h2>Create clarity here</h2>
+        <h3 id="claritySubheading">This is your workspace for planning, bringing structure to your learning path, and reminding yourself of your why</h3>
+        <div>
+            <button class="generateExample">Generate Example</button>
+            <p id="exampleText"></p>
+        </div>
+
         <div class="plan-and-button-container">
              <div class="input">
                 <input type="text" class="input-field" id="planInput" placeholder="Add a new plan"/>
@@ -36,38 +42,10 @@
             </div>
         </div>
 
-        <div>
-            <button class="generateExample">Generate Example</button>
-            <p id="exampleText"></p>
-        </div>
-
         <div class="not-aligned-section">
             <h4 id="not-aligned-message"></h4>
         </div>
-        <dialog id="attentionDialog">
-            <form method="dialog">
-                <p>
-                    <label for="attentionList">Where is the majority of your attention flowing at the moment?</label>
-                    <select id="attentionList" name="attentionList">
-                        <option id="no-option-selected"></option>
-                        <option id="true-north-option">My true north</option>
-                        <option id="other-obligations">Other obligations</option>
-                        <option id="distraction-option">Distractions</option>
-                        <option id="not-sure-option">I'm not sure</option>
-                    </select>
-                </p>
-                <div>
-                    <button id="cancel" type="reset">Cancel</button>
-                    <button class="submit" type="submit">Confirm</button>
-                </div>
-            </form>
-        </dialog>
-        <div class="attention-wrapper">
-            <button id="attention">Your attention</button>
-        </div>
-        <div class="attention-section">
-            <h4 id="attention-message"></h4>
-        </div>
+        
         <ul class="scroll">
             <li id="planList"></li>
         </ul>
@@ -83,6 +61,32 @@
         <div class="footer">
             <p class="made-by">Made By</p>
             <p class="author">Alejandro L</p>
+
+            <dialog id="feedbackDialog">
+            <form method="dialog">
+                <p>
+                    <label for="feedbackList">I would greatly appreciate the feedback</label>
+                    <select id="feedbackList" name="feedbackList">
+                        <option id="no-option-selected"></option>
+                        <option id="needs-work">Needs work</option>
+                        <option id="very-helpful">Very helpful</option>
+                        <option id="did-not-help">Did not help me</option>
+                        <option id="not-sure-option">I'm not sure</option>
+                    </select>
+                </p>
+                <div>
+                    <button id="cancel" type="reset">Cancel</button>
+                    <button class="submit" type="submit">Confirm</button>
+                </div>
+            </form>
+        </dialog>
+
+            <div class="feedback-button-wrapper">
+                <button id="feedback">Feedback</button>
+            </div>
+            <div class="feedback-section">
+                <h4 id="feedback-message"></h4>
+            </div>
         </div>
     </footer>
 </body>
