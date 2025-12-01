@@ -95,7 +95,8 @@ body {
 }
 
 .header-btn,
-.btn {
+.btn,
+#feedback {
     background-color: rgb(159, 185, 168);
     color: white;
 }
@@ -113,6 +114,11 @@ body {
     border-radius: 0.3rem;
     right: 0.5rem;
     bottom: 0.5rem;
+}
+
+#feedback {
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
 }
 
 h1,
@@ -278,6 +284,9 @@ input[type="checkbox"]:checked::before {
 
 .footer {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 1.8rem;
     background-color: white;
     padding: 1.2rem;

@@ -66,26 +66,28 @@
 
     <footer>
         <div class="footer">
-            <p class="made-by">Made By</p>
-            <p class="author">Alejandro L</p>
+            <div class="made-by-wrapper">
+                <p class="made-by">Made By</p>
+                <p class="author">Alejandro L</p>
+            </div>
             <dialog id="feedbackDialog">
-            <form method="dialog">
-                <p>
-                    <label for="feedbackList">What are your thoughts on this webapp? I would greatly appreciate the feedback.</label>
-                    <select id="feedbackList" name="feedbackList">
-                        <option id="no-option-selected"></option>
-                        <option id="needs-work">Needs work</option>
-                        <option id="very-helpful">Very helpful</option>
-                        <option id="did-not-help">Did not help me</option>
-                        <option id="not-sure-option">I'm not sure</option>
-                    </select>
-                </p>
-                <div>
-                    <button id="cancel" type="reset">Cancel</button>
-                    <button class="submit" type="submit">Confirm</button>
-                </div>
-            </form>
-        </dialog>
+                <form method="dialog">
+                    <p>
+                        <label for="feedbackList">What are your thoughts on this webapp? I would greatly appreciate the feedback.</label>
+                        <select id="feedbackList" name="feedbackList">
+                            <option id="no-option-selected"></option>
+                            <option id="needs-work">Needs work</option>
+                            <option id="very-helpful">Very helpful</option>
+                            <option id="did-not-help">Did not help me</option>
+                            <option id="not-sure-option">I'm not sure</option>
+                        </select>
+                    </p>
+                    <div>
+                        <button id="cancel" type="reset">Cancel</button>
+                        <button class="submit" type="submit">Confirm</button>
+                    </div>
+                </form>
+            </dialog>
             <div class="feedback-button-wrapper">
                 <button id="feedback">Feedback</button>
             </div>
