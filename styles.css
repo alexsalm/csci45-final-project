@@ -103,6 +103,8 @@ body {
 #users-answer {
     border-radius: 0.3rem;
     border-style: dashed;
+    font-size: 200%;
+    border-color: rgb(159, 185, 168);
 }
 
 .btn {
