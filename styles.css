@@ -41,7 +41,7 @@ body {
 .section-wrapper {
     width: 80%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     margin-top: 6rem;
 }
